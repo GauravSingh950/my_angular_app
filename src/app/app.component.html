@@ -1,9 +1,11 @@
-<h1>Hello World!</h1>
-<app-login></app-login>
-<app-profile></app-profile>
-<br><br>
-<input type="text" placeholder="Enter your name" (input)="getUsername($event)">
-<br><br>
-<h2 style = "color:blueviolet">{{tempUsername}}</h2>
-<br><br>
-<button class="btn" name="submit-btn" (click) = "setUsername()">Set Username</button>
+<div style="display: flex; flex-direction: column; align-items: center; margin-top: 40px;">
+  <button class="toggle-btn" (click)="toggleStatus()">Toggle</button>
+  <br>
+  <button class="toggle-btn" (click)="toggleStatus()">{{status ? 'Hide': 'Show'}}</button>
+  @if(status){
+    <div style="background-color: blue; height: 200px; width: 200px; border-radius: 50%; margin-top: 30px;"></div>
+  }
+  @else{
+
+  }
+</div>

@@ -9,17 +9,9 @@ import { ProfileComponent } from './profile/profile.component';
   styleUrls: ['./app.component.css'] // Fixed typo
 })
 export class AppComponent {
-  title = 'my-angular-app';
-  tempUsername = "";
-  username = "Gaurav";
-
-  getUsername(event:Event){
-    this.tempUsername = (event.target as HTMLInputElement).value;
-     console.log(this.tempUsername);
+  status = true;
+  toggleStatus(){
+    this.status == true?this.status = false:this.status = true;
   }
 
-  setUsername(){
-    this.username = this.tempUsername;
-    console.log(this.username);
-  }
 }
