@@ -1,19 +1,25 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import { ProfileComponent } from './profile/profile.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LoginComponent,ProfileComponent],
+  imports: [LoginComponent, ProfileComponent], // Removed RouterOutlet
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // Fixed typo
 })
 export class AppComponent {
-  //These are properties, not variables
-  
-  handleEvent(event:MouseEvent){
-    console.log(event.target)
-    console.log(event.type);
+  title = 'my-angular-app';
+  tempUsername = "";
+  username = "Gaurav";
+
+  getUsername(event:Event){
+    this.tempUsername = (event.target as HTMLInputElement).value;
+     console.log(this.tempUsername);
+  }
+
+  setUsername(){
+    this.username = this.tempUsername;
+    console.log(this.username);
   }
 }

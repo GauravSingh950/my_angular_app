@@ -1,4 +1,9 @@
 <h1>Hello World!</h1>
 <app-login></app-login>
 <app-profile></app-profile>
-<button class = "btn" name="login-btn" (click)="handleEvent($event) ">Click Me!</button>
+<br><br>
+<input type="text" placeholder="Enter your name" (input)="getUsername($event)">
+<br><br>
+<h2 style = "color:blueviolet">{{tempUsername}}</h2>
+<br><br>
+<button class="btn" name="submit-btn" (click) = "setUsername()">Set Username</button>
