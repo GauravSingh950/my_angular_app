@@ -1,18 +1,6 @@
-<input type="text" placeholder="Enter your color" (input)="handleInput($event)">
-<br>
-<div [style.backgroundColor]="color" style="height: 200px; width: 200px;"></div>
-<br>
-@switch(color){
-    @case('red'){
-        <div style = "background-color:red;height:200px;width:200px"></div>
-    }
-    @case('blue'){
-         <div style = "background-color:blue;height:200px;width:200px"></div>
-    }
-    @case('black'){
-         <div style = "background-color:black;height:200px;width:200px"></div>
-    }
-    @default{
-        <h2>No Color Matched for switch statement</h2>
-    }
+@for(item of employees; track item){
+    <h3>{{item}}</h3>
+}
+@for(student of students; track student){
+    <h2>{{$index + 1}}. {{student.name}}, Age: {{student.age}}</h2>
 }
