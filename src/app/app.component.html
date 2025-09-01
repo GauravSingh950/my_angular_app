@@ -1,11 +1,18 @@
-<div style="display: flex; flex-direction: column; align-items: center; margin-top: 40px;">
-  <button class="toggle-btn" (click)="toggleStatus()">Toggle</button>
-  <br>
-  <button class="toggle-btn" (click)="toggleStatus()">{{status ? 'Hide': 'Show'}}</button>
-  @if(status){
-    <div style="background-color: blue; height: 200px; width: 200px; border-radius: 50%; margin-top: 30px;"></div>
-  }
-  @else{
-
-  }
-</div>
+<input type="text" placeholder="Enter your color" (input)="handleInput($event)">
+<br>
+<div [style.backgroundColor]="color" style="height: 200px; width: 200px;"></div>
+<br>
+@switch(color){
+    @case('red'){
+        <div style = "background-color:red;height:200px;width:200px"></div>
+    }
+    @case('blue'){
+         <div style = "background-color:blue;height:200px;width:200px"></div>
+    }
+    @case('black'){
+         <div style = "background-color:black;height:200px;width:200px"></div>
+    }
+    @default{
+        <h2>No Color Matched for switch statement</h2>
+    }
+}

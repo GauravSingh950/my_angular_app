@@ -9,9 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
   styleUrls: ['./app.component.css'] // Fixed typo
 })
 export class AppComponent {
-  status = true;
-  toggleStatus(){
-    this.status == true?this.status = false:this.status = true;
+  color = 'none';
+  handleInput(event:Event){
+    this.color = (event.target as HTMLInputElement).value;
   }
-
 }
