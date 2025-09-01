@@ -1,6 +1,5 @@
-@for(item of employees; track item){
-    <h3>{{item}}</h3>
-}
-@for(student of students; track student){
-    <h2>{{$index + 1}}. {{student.name}}, Age: {{student.age}}</h2>
-}
+<h3>Signal: {{count()}}</h3>
+<h3>Property: {{x}}</h3>
+
+<button (click)="updateValue()">Increase Signal</button>
+<button (click)="x =x+1">Increase Property</button>
