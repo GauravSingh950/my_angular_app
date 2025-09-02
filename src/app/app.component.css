@@ -2,3 +2,174 @@ h2{
     color: red;
     -webkit-text-stroke: 0.5px black;
 }
+
+.maersk-title {
+font-family: 'Segoe UI', Monaco;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.maersk-brand {
+  color: #42B0D5;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #333;
+  text-stroke: 1px #333;
+  font-weight: 900;
+  margin-right: 12px;
+  letter-spacing: 4px;
+}
+
+.doit-brand {
+  color: #333;
+  font-style: italic;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px #42B0D5;
+}
+ .header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.maersk-logo {
+  height: 100px; 
+  width: auto;
+  display: block;
+}
+/* Title styling */
+.todo-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+
+  position: relative;
+  z-index: 1; 
+}
+
+
+.todo-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.todo-input button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.todo-input button:hover {
+  background-color: #0056b3;
+}
+
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item span {
+  font-size: 18px;
+  color: #333;
+  max-width: 60%;
+  overflow-x: auto;      /* Enable horizontal scroll if text is too long */
+  white-space: nowrap;   /* Prevent wrapping, keep text in one line */
+  display: block;
+}
+.todo-actions {
+  display: flex;
+  gap: 20px;
+}
+.complete-btn {
+  padding: 5px 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  /* Remove margin-right */
+}
+.remove-btn {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.remove-btn:hover {
+  background-color: #a71d2a;
+}
+.reset-btn {
+  padding: 5px 10px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #ffbf00;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.reset-btn:hover {
+  background-color: #e0a800;
+}
+.todo-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(249, 249, 249, 0.95); /* Semi-transparent background */
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Higher than logo to overlap when needed */
+}
+
+.maersk-group-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;           /* Lower than todo container */
+  opacity: 1.0;         /* Visible but not overwhelming */
+  pointer-events: none; /* Allows clicks to pass through */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}

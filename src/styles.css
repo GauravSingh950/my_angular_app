@@ -2,3 +2,9 @@
 h2{
     color: blue;    
 }
+
+body {
+  background-color: #42B0D5; /* HEX: #42B0D5 | RGB: (66, 176, 213) */
+  color: #333;
+   /* Optional: set text color for contrast */
+}
