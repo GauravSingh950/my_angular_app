@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.active {
+  background-color: red !important;
+}

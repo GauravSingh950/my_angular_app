@@ -1,35 +1,5 @@
-<div class="todo-container">
-  <div class="header-flex">
-    <h1 class="maersk-title">
-    <span class="maersk-brand">MAERSK</span>
-    <span class="doit-brand">Do-IT</span>
-    </h1>
-  </div>
-  <div class="todo-input">
-    <input id="todoInput" type="text" placeholder="Enter your Task" #todoInput />
-    <button (click)="addTodo(todoInput.value);todoInput.value = '' ">Add Task</button>
-  </div>
+<h2>App Comp works!</h2>
 
-  <ul class="todo-list">
-    @for (item of todo; track item.text) {
-      <li class="todo-item">
-        @if(item.completed){    
-            <span style="text-decoration: line-through;">{{$index+1}}. {{item.text }}</span>
-        }
-        @else{
-            <span>{{$index+1}}. {{item.text }}</span>
-        }
-        
-        <span class = "todo-actions">
-        <button class="complete-btn" (click)="completeTodo(item.id)">Done</button>
-        <button class="remove-btn" (click)="removeTodo(item.id)">Remove</button>
-        </span>
-       
-      </li>
-    }
-    <button class = "reset-btn" (click)="resetTodo()">Reset</button>
-  </ul>
-</div>
-<div class = "maersk-group-logo">
-     <img src="maersk-logo.png" alt="Maersk Logo" class="maersk-logo"/>
-</div>
+<!-- Here we have called HeaderComp in App Comp so that it becomes common component among all components -->
+<app-header></app-header>
+<router-outlet/>
