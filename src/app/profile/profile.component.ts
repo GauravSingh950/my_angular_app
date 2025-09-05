@@ -8,24 +8,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent {
-  constructor(private route:ActivatedRoute){  }
-  username: string | null = "";
-  // ngOnInit(){
-  //   this.username = this.route.snapshot.paramMap.get('name');
-  // }
-  ngOnInit() {
-    
-
-    this.route.queryParams.subscribe(params => {
-      console.log(params['name']);
-      if(params['name']){
-        this.username = params['name'];
-      }
-    });
-    const paramName = this.route.snapshot.paramMap.get('name');
-    if(paramName){
-      this.username = paramName;
+    constructor(private route:ActivatedRoute){}
+    userId : number | null = null;
+    ngOnInit(){
+      const idParam = this.route.snapshot.paramMap.get('id');
+      this.userId = idParam !== null ? parseInt(idParam) : null;
+      console.log(idParam);
     }
-  }  
+    
 }
  

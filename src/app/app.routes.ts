@@ -11,6 +11,7 @@ export const routes: Routes = [
     {path:'contact',component:ContactComponent},
     {path:'header',component:HeaderComponent},
     {path:'profile',component:ProfileComponent},
+    {path:'profile/:id',component:ProfileComponent},
     {path:'**', component: PageNotFoundComponent} // Wildcard
 ];
 
