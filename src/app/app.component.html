@@ -1,22 +1,12 @@
 <h2>Template Driven Form</h2>
 
-<!-- Here we have called HeaderComp in App Comp so that it becomes common component among all components -->
 <!-- <app-header></app-header> -->
 <router-outlet/>
 
-<form class = "form-box" #userForm = "ngForm" (ngSubmit) = "addUserDetails(userForm.value)">
-    <input #name = "ngModel" type = "text" required placeholder="Enter your name" name = "name" ngModel>
-    <span *ngIf = "name?.invalid && name?.touched">Name is required</span>
-    <br><br>
-    <input #password="ngModel" type = "text"  minlength="5" required placeholder="Enter password" name = "password" ngModel>
-    <span *ngIf = "password?.invalid && password?.touched">Enter valid password</span>
-    <br><br>
-    <select name = "gender" ngModel>
-        <option value = "">Select Gender</option>
-        <option value = "male">Male</option>
-        <option value = "Female">Female</option>
-    </select>
-    <br><br>
-    <button [disabled]="userForm?.invalid" type="submit" style = "margin-left:96px">Add User</button>
-</form>
-
+<select [(ngModel)]="selectedUser" name="selectedUser">
+    <option value = "">Select Name</option>
+    <option value="Gaurav">Gaurav</option>
+    <option value="Amit">Amit</option>
+    <option value="Shreyas">Shreays</option>    
+</select>
+<app-user  [user]="selectedUser"></app-user>
