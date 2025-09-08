@@ -1,9 +1,0 @@
-.NotFound {
-  background-color: rgb(38, 36, 28);
-  min-height: 100vh;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-}
