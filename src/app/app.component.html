@@ -5,9 +5,11 @@
 <router-outlet/>
 
 <form class = "form-box" #userForm = "ngForm" (ngSubmit) = "addUserDetails(userForm.value)">
-    <input type = "text" placeholder="Enter your name" name = "name" ngModel>
+    <input #name = "ngModel" type = "text" required placeholder="Enter your name" name = "name" ngModel>
+    <span *ngIf = "name?.invalid && name?.touched">Name is required</span>
     <br><br>
-    <input type = "text" placeholder="Enter password" name = "password" ngModel>
+    <input #password="ngModel" type = "text"  minlength="5" required placeholder="Enter password" name = "password" ngModel>
+    <span *ngIf = "password?.invalid && password?.touched">Enter valid password</span>
     <br><br>
     <select name = "gender" ngModel>
         <option value = "">Select Gender</option>
@@ -15,6 +17,6 @@
         <option value = "Female">Female</option>
     </select>
     <br><br>
-    <button type = "submit" style = "margin-left:96px">Add User</button>
+    <button [disabled]="userForm?.invalid" type="submit" style = "margin-left:96px">Add User</button>
 </form>
 
