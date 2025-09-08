@@ -1,5 +1,17 @@
 <h2>App Comp works!</h2>
 
 <!-- Here we have called HeaderComp in App Comp so that it becomes common component among all components -->
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 <router-outlet/>
+
+<form class = "form-box" [formGroup] = "profileForm" (ngSubmit) = "onSubmit()">
+    <input type = "text" placeholder = "Enter your name" formControlName = "name">
+    <br>
+    <br>
+    <input type = "text" placeholder= "Enter your Password" formControlName = "password">
+    <br><br>
+    <input type = "text" placeholder= "Enter your Email" formControlName = "email">
+    <br><br>
+    <button type = "submit" style = "margin-left: 57%;">Submit</button>
+</form>
+
