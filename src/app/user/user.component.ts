@@ -7,9 +7,21 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  @Output() getUsers = new EventEmitter();
-  users = ["Gaurav","Aman","Yaman","Bishu"];
-  // ngOnInit(){
-  //   this.getUsers.emit(this.users);
-  // }
+    name = "Anil"
+    @Input() counter = 0;
+    // constructor(){
+    //   console.log("constructor");
+    //   this.name = "Aman"
+    // }
+    // ngOnInit(){
+    //   console.log("Initialization");
+    //   this.name = "Yaman"
+    // }
+    // ngOnDestroy(){
+    //   console.log("Component Destroyed");
+    // }
+    // ngOnChanges(){
+    //   console.log("Input Changed");
+ 
+    // }
 }
