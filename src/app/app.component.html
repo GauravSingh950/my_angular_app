@@ -1,4 +1,8 @@
-<h2>API Calls</h2>
-@for(item of productList; track item.id) {
-  <h3>{{ item.id }} -- {{ item.title }}</h3>
-}
+<h2>JSON Server API Call</h2>
+<div *ngFor="let item of user">
+  <ul>
+    <li>Name: {{ item.name }}</li>
+    <li>APM ID: {{ item['APM ID'] }}</li>
+    <li>Age: {{ item.Age }}</li>
+  </ul>
+</div>
