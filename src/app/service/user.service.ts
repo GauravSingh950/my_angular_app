@@ -19,4 +19,6 @@ export class UserService {
   removeUser(id:string):Observable<User>{
     return this.http.delete<User>(this.url+'/'+id);
   }
+
+  
 }

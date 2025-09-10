@@ -1,22 +1,3 @@
-<h2>JSON Server API Call</h2>
-<form class="form-box" #userForm = "ngForm" (ngSubmit)="onSubmit(userForm.value)">
-    <h2>Add User</h2>
-    <input type = "text" placeholder = "Enter name" name="name" ngModel>
-    <br><br>
-    <input type="string" placeholder="Enter APM ID" name="APM_ID" ngModel>
-    <br><br>
-    <input type="number" placeholder="Enter Age" name="Age" ngModel>
-    <br><br>
-    <button type="submit">Submit</button>
-    <h2>Remove User</h2>
-    <input #idInput type="text" placeholder="Enter ID">
-    <br><br>
-    <button type="button" (click)="deleteUser(idInput.value)">Delete</button>
-</form>
-<div *ngFor="let item of user">
-  <ul>
-    <li>Name: {{ item.name }}</li>
-    <li>APM ID: {{ item['APM_ID'] }}</li>
-    <li>Age: {{ item.Age }}</li>
-  </ul>
-</div>
+<h2>Lazy Loading</h2>
+<a routerLink="admin">Go to Admin Page</a>
+<router-outlet></router-outlet>
