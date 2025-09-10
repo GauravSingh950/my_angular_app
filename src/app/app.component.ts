@@ -1,17 +1,15 @@
   import { Component } from '@angular/core';
-import { UserComponent } from './user/user.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { CurrencyConverterPipe } from './pipe/currency-converter.pipe';
-import { ProductService } from './service/product.service';
 import { UserService } from './service/user.service';
 import { User } from './interface/user';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   
 
   @Component({
     selector: 'app-root',
     standalone:true,
-    imports: [UserComponent, CommonModule, HttpClientModule],
+    imports: [CommonModule, HttpClientModule,FormsModule],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
   })
@@ -23,11 +21,21 @@ import { User } from './interface/user';
       this.userService.getUsers().subscribe((raw: any[]) => {
         this.user = raw.map(u => ({
           name: u.name,
-          APM_ID: u['APM ID'],
+          APM_ID: u['APM_ID'],
           Age: u.Age
         }));
         console.log(this.user);
       });
+    }
+    onSubmit(user:User){
+      this.userService.addUser(user).subscribe((data:any)=>{
+        console.log(user);
+      })
+    }
+    deleteUser(id:string){
+      this.userService.removeUser(id).subscribe((data:any)=>{
+        console.log("User Succesfully Removed");
+      })
     }
     
   }
